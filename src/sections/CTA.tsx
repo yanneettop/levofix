@@ -66,7 +66,7 @@ const CTA = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-[#1c0e0e] overflow-hidden"
+      className="relative py-20 lg:py-32 bg-brand-dark overflow-hidden"
     >
       {/* Top red line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/50 to-transparent" />
