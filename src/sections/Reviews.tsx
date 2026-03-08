@@ -27,7 +27,7 @@ const reviews = [
     name: 'Emma W.',
     location: 'Bow',
     rating: 5,
-    text: 'Booked a pre-purchase inspection before buying a used car. Denis was punctual, went through everything in detail and gave me a clear picture of the car\'s condition. Saved me from a bad purchase.',
+    text: "Booked a pre-purchase inspection before buying a used car. Denis was punctual, went through everything in detail and gave me a clear picture of the car's condition. Saved me from a bad purchase.",
     car: 'Audi A3',
   },
   {
@@ -66,10 +66,8 @@ const Reviews = () => {
     <section
       id="reviews"
       ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-brand-dark overflow-hidden"
+      className="relative py-20 lg:py-32 bg-gray-50 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-darker/50 to-transparent pointer-events-none" />
-
       <div className="relative z-10 w-full section-padding">
         <div className="max-w-7xl mx-auto">
 
@@ -79,14 +77,14 @@ const Reviews = () => {
               <span className="text-brand-red text-sm font-semibold uppercase tracking-widest">
                 Customer Reviews
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
                 What Customers{' '}
                 <span className="text-gradient-red">Say About Denis</span>
               </h2>
 
               {/* Google Rating Banner */}
               <div className="inline-flex flex-wrap items-center justify-center gap-3 mt-4 px-6 py-3
-                              bg-brand-darker border border-white/10 rounded-2xl">
+                              bg-white border border-gray-200 rounded-2xl shadow-sm">
                 {/* Google G */}
                 <span className="font-bold text-lg tracking-tight">
                   <span className="text-[#4285F4]">G</span>
@@ -101,8 +99,8 @@ const Reviews = () => {
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span className="text-white font-bold text-lg">4.9</span>
-                <span className="text-white/50 text-sm">from 61 reviews</span>
+                <span className="text-gray-900 font-bold text-lg">4.9</span>
+                <span className="text-gray-500 text-sm">from 61 reviews</span>
                 <a
                   href={GOOGLE_REVIEWS_URL}
                   target="_blank"
@@ -123,12 +121,12 @@ const Reviews = () => {
               <div
                 key={review.name}
                 className="reveal opacity-0 group flex flex-col p-6 rounded-2xl
-                           bg-brand-darker border border-white/10
-                           hover:border-brand-red/55 hover:shadow-glowRed transition-all duration-300"
+                           bg-white border border-gray-200 shadow-sm
+                           hover:border-brand-red/40 hover:shadow-md transition-all duration-300"
                 style={{ animationDelay: `${(index % 3) * 100}ms` }}
               >
                 {/* Quote icon */}
-                <Quote className="w-6 h-6 text-brand-red/40 mb-4 flex-shrink-0" />
+                <Quote className="w-6 h-6 text-brand-red/30 mb-4 flex-shrink-0" />
 
                 {/* Stars */}
                 <div className="flex gap-1 mb-3">
@@ -138,14 +136,14 @@ const Reviews = () => {
                 </div>
 
                 {/* Review text */}
-                <p className="text-white/65 text-sm leading-relaxed flex-1 mb-5">
+                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
                   "{review.text}"
                 </p>
 
                 {/* Author */}
-                <div className="border-t border-white/5 pt-4">
-                  <p className="text-white font-semibold text-sm">{review.name}</p>
-                  <p className="text-white/40 text-xs mt-0.5">
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="text-gray-900 font-semibold text-sm">{review.name}</p>
+                  <p className="text-gray-400 text-xs mt-0.5">
                     {review.location} · {review.car}
                   </p>
                 </div>
@@ -154,16 +152,16 @@ const Reviews = () => {
 
             {/* View All Card */}
             <div className="reveal opacity-0 flex flex-col items-center justify-center p-6 rounded-2xl
-                            bg-brand-darker border border-brand-red/20 hover:border-brand-red/50
-                            transition-all duration-300 text-center min-h-[200px]"
+                            bg-white border-2 border-brand-red/20 hover:border-brand-red/50
+                            transition-all duration-300 text-center min-h-[200px] shadow-sm"
                  style={{ animationDelay: '500ms' }}>
               <div className="flex gap-1 mb-3">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-white font-bold text-2xl mb-1">4.9 / 5</p>
-              <p className="text-white/50 text-sm mb-5">Based on 61 Google reviews</p>
+              <p className="text-gray-900 font-bold text-2xl mb-1">4.9 / 5</p>
+              <p className="text-gray-500 text-sm mb-5">Based on 61 Google reviews</p>
               <a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
