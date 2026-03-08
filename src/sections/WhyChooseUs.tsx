@@ -73,7 +73,7 @@ const WhyChooseUs = () => {
     <section
       id="why"
       ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-brand-darker overflow-hidden"
+      className="relative py-20 lg:py-32 bg-brand-navy overflow-hidden"
     >
       {/* Glow accents */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-red/5 rounded-full blur-3xl pointer-events-none" />
@@ -103,8 +103,8 @@ const WhyChooseUs = () => {
             {reasons.map((item, index) => (
               <div
                 key={item.title}
-                className="reveal opacity-0 group p-6 rounded-2xl bg-brand-dark border border-white/5
-                           hover:border-brand-red/40 hover:shadow-glowRed transition-all duration-300"
+                className="reveal opacity-0 group p-6 rounded-2xl bg-[#131929] border border-white/10
+                           hover:border-brand-red/60 hover:shadow-glowRed transition-all duration-300"
                 style={{ animationDelay: `${(index % 3) * 100}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-brand-red/10 flex items-center justify-center mb-5
@@ -126,7 +126,7 @@ const WhyChooseUs = () => {
             {stats.map(({ value, label }) => (
               <div
                 key={label}
-                className="text-center py-6 px-4 rounded-2xl bg-brand-dark border border-white/5"
+                className="text-center py-6 px-4 rounded-2xl bg-[#131929] border border-white/10"
               >
                 <div className="text-3xl lg:text-4xl font-bold text-brand-red mb-1">
                   {value}

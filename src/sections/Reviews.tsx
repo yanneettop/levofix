@@ -123,8 +123,8 @@ const Reviews = () => {
               <div
                 key={review.name}
                 className="reveal opacity-0 group flex flex-col p-6 rounded-2xl
-                           bg-brand-darker border border-white/5
-                           hover:border-brand-red/30 transition-all duration-300"
+                           bg-brand-darker border border-white/10
+                           hover:border-brand-red/55 hover:shadow-glowRed transition-all duration-300"
                 style={{ animationDelay: `${(index % 3) * 100}ms` }}
               >
                 {/* Quote icon */}

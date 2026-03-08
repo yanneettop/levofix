@@ -142,8 +142,8 @@ const Services = () => {
               <div
                 key={service.title}
                 className="reveal opacity-0 group flex flex-col p-6 rounded-2xl
-                           bg-brand-darker border border-white/5
-                           hover:border-brand-red/40 hover:shadow-glowRed
+                           bg-brand-darker border border-white/10
+                           hover:border-brand-red/60 hover:shadow-glowRed
                            transition-all duration-300"
                 style={{ animationDelay: `${(index % 3) * 100}ms` }}
               >

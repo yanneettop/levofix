@@ -61,6 +61,7 @@ module.exports = {
           grayDark: "#4B5563",   // Dark gray
           dark: "#1F1F1F",       // Warm dark background
           darker: "#171717",     // Darker background
+          navy: "#0d1117",       // Dark navy — accent section break
           white: "#FFFFFF",
         },
       },
@@ -77,8 +78,8 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glowRed: "0 0 20px rgba(198, 40, 40, 0.3)",
-        "glowRed-lg": "0 0 40px rgba(198, 40, 40, 0.4)",
+        glowRed: "0 0 30px rgba(198, 40, 40, 0.5)",
+        "glowRed-lg": "0 0 55px rgba(198, 40, 40, 0.65)",
         glowBlue: "0 0 20px rgba(37, 99, 235, 0.3)",
         "glowBlue-lg": "0 0 40px rgba(37, 99, 235, 0.4)",
         card: "0 4px 20px rgba(0, 0, 0, 0.08)",
