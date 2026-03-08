@@ -49,7 +49,7 @@ const ServiceArea = () => {
     <section
       id="area"
       ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-brand-darker overflow-hidden"
+      className="relative py-20 lg:py-32 bg-[#0e1a16] overflow-hidden"
     >
       {/* Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64
