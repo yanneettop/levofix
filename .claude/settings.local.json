@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__desktop-commander__list_directory",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__desktop-commander__start_process",
+      "mcp__desktop-commander__kill_process",
+      "mcp__desktop-commander__force_terminate",
+      "Bash(npx skills find everything-claude-code)",
+      "Bash(Test-Path \"C:\\\\Users\\\\chest\\\\Desktop\\\\Websites\\\\Levofix LTD\\\\Website\\\\.gitignore\")"
+    ]
+  }
+}
