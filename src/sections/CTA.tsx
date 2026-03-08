@@ -66,30 +66,25 @@ const CTA = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-brand-dark overflow-hidden"
+      className="relative py-20 lg:py-32 bg-gray-50 overflow-hidden"
     >
-      {/* Top red line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-red/50 to-transparent" />
-      {/* Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent pointer-events-none" />
-
       <div className="relative z-10 w-full section-padding">
         <div className="max-w-4xl mx-auto">
 
           {/* CTA Card */}
-          <div className="reveal opacity-0 relative rounded-3xl bg-brand-darker border border-white/5 overflow-hidden p-8 lg:p-14">
-            {/* Top accent line */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-brand-red to-transparent" />
+          <div className="reveal opacity-0 relative rounded-3xl bg-white border border-gray-200 overflow-hidden shadow-lg p-8 lg:p-14">
+            {/* Red top accent line */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-brand-red" />
 
             <div className="text-center">
               <span className="text-brand-red text-sm font-semibold uppercase tracking-widest">
                 Get In Touch
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
                 Need Help With{' '}
                 <span className="text-gradient-red">Your Car?</span>
               </h2>
-              <p className="text-white/60 text-lg max-w-xl mx-auto mb-10">
+              <p className="text-gray-500 text-lg max-w-xl mx-auto mb-10">
                 Call Denis at Levofix LTD for diagnostics, servicing and mobile
                 repairs across London. Fast response, honest advice.
               </p>
@@ -101,13 +96,13 @@ const CTA = () => {
                   className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center text-base px-8 py-4"
                 >
                   <Phone className="w-5 h-5" />
-                  Call Now — 07880 037742
+                  Call Now
                 </a>
                 <button
                   onClick={() => setIsFormOpen(true)}
                   className="flex items-center gap-2 w-full sm:w-auto justify-center text-base px-8 py-4
-                             border-2 border-white/30 text-white font-montserrat font-semibold rounded-lg
-                             hover:border-white/60 hover:bg-white/5 transition-all duration-300 active:scale-95"
+                             border-2 border-gray-300 text-gray-700 font-montserrat font-semibold rounded-lg
+                             hover:border-brand-red hover:text-brand-red transition-all duration-300 active:scale-95"
                 >
                   <Calendar className="w-5 h-5" />
                   Book Diagnostic
@@ -115,15 +110,15 @@ const CTA = () => {
               </div>
 
               {/* Contact Info Row */}
-              <div className="grid sm:grid-cols-3 gap-4 pt-8 border-t border-white/5">
+              <div className="grid sm:grid-cols-3 gap-4 pt-8 border-t border-gray-100">
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-10 h-10 rounded-lg bg-brand-red/10 flex items-center justify-center">
                     <Phone className="w-5 h-5 text-brand-red" />
                   </div>
-                  <span className="text-white/40 text-xs uppercase tracking-wider">Phone</span>
+                  <span className="text-gray-400 text-xs uppercase tracking-wider">Phone</span>
                   <a
                     href="tel:07880037742"
-                    className="text-white font-semibold hover:text-brand-red transition-colors text-sm"
+                    className="text-gray-900 font-semibold hover:text-brand-red transition-colors text-sm"
                   >
                     07880 037742
                   </a>
@@ -133,16 +128,16 @@ const CTA = () => {
                   <div className="w-10 h-10 rounded-lg bg-brand-red/10 flex items-center justify-center">
                     <Clock className="w-5 h-5 text-brand-red" />
                   </div>
-                  <span className="text-white/40 text-xs uppercase tracking-wider">Hours</span>
-                  <span className="text-white font-semibold text-sm">Mon–Fri: 8:30am – 6:00pm</span>
+                  <span className="text-gray-400 text-xs uppercase tracking-wider">Hours</span>
+                  <span className="text-gray-900 font-semibold text-sm">Mon–Fri: 8:30am – 6:00pm</span>
                 </div>
 
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-10 h-10 rounded-lg bg-brand-red/10 flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-brand-red" />
                   </div>
-                  <span className="text-white/40 text-xs uppercase tracking-wider">Based In</span>
-                  <span className="text-white font-semibold text-sm">Poplar, East London</span>
+                  <span className="text-gray-400 text-xs uppercase tracking-wider">Based In</span>
+                  <span className="text-gray-900 font-semibold text-sm">Poplar, East London</span>
                 </div>
               </div>
             </div>
