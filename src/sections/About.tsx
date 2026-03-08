@@ -49,7 +49,7 @@ const About = () => {
                 {/* Logo circle */}
                 <div className="relative z-10 w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-brand-red shadow-glowRed mx-auto">
                   <img
-                    src="/logo.jpg"
+                    src="/logo3.png"
                     alt="Levofix Ltd — Denis Levoskin Mobile Mechanic London"
                     className="w-full h-full object-cover"
                   />

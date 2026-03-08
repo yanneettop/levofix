@@ -42,7 +42,7 @@ const Footer = () => {
                 className="flex items-center gap-3 mb-5"
               >
                 <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-red flex-shrink-0">
-                  <img src="/logo.jpg" alt="Levofix Ltd" className="w-full h-full object-cover" />
+                  <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover" />
                 </div>
                 <div className="text-left">
                   <span className="font-montserrat font-bold text-xl text-white block leading-tight">
