@@ -51,7 +51,7 @@ const About = () => {
                   <img
                     src="/logo3.png"
                     alt="Levofix Ltd — Denis Levoskin Mobile Mechanic London"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-[1.35]"
                   />
                 </div>
 

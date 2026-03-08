@@ -57,7 +57,7 @@ const Navbar = ({ scrollY }: NavbarProps) => {
               className="flex items-center gap-3 group"
             >
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-red transition-transform duration-300 group-hover:scale-110">
-                <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover" />
+                <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover scale-[1.35]" />
               </div>
               <div className="hidden sm:block">
                 <span className="font-montserrat font-bold text-xl text-white block leading-tight">
@@ -127,7 +127,7 @@ const Navbar = ({ scrollY }: NavbarProps) => {
           {/* Logo in mobile menu */}
           <div className="mb-4">
             <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-brand-red">
-              <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover" />
+              <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover scale-[1.35]" />
             </div>
           </div>
           
