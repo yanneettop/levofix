@@ -1,8 +1,9 @@
-import { useEffect, useRef } from 'react';
-import { Phone, Calendar, CheckCircle2, ChevronDown, Star } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Phone, ChevronDown, Bolt, MapPin, Wrench } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [parallax, setParallax] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,30 +24,54 @@ const Hero = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setParallax(scrollY * 0.22);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const trustBadges = [
-    { label: '18+ Years Experience' },
-    { label: '4.9 ★ on Google', highlight: true },
-    { label: 'Mobile Service Across London' },
+  const trustPoints = [
+    { icon: Bolt, label: 'Fast mobile response' },
+    { icon: MapPin, label: 'We come to you' },
+    { icon: Wrench, label: 'Fully equipped workshop' },
   ];
 
   return (
     <section
       id="home"
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="group relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src="/hero-new.jpg"
-          alt="Denis from Levofix LTD — mobile mechanic working on a car in London"
-          className="w-full h-full object-cover object-center"
-        />
+        <div
+          className="absolute inset-0 overflow-hidden will-change-transform transition-transform duration-700 ease-out group-hover:scale-105"
+          style={{ transform: `translateY(${parallax}px)` }}
+        >
+          <img
+            src="/hero-new.jpg"
+            alt="Denis from Levofix LTD — mobile mechanic working on a car in London"
+            className="w-full h-full object-cover object-center will-change-transform animate-ken-burns"
+          />
+        </div>
+
         {/* Dark on left where text sits, open on right */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
@@ -66,63 +91,52 @@ const Hero = () => {
 
           {/* Headline */}
           <h1
-            className="reveal opacity-0 font-montserrat font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl
-                       text-white leading-[1.1] mb-6 animation-delay-100"
+            className="reveal opacity-0 font-montserrat font-semibold text-4xl sm:text-5xl md:text-5xl lg:text-6xl
+                       text-white leading-tight mb-5 animation-delay-100"
           >
-            Mobile Car{' '}
-            <span className="text-gradient-red">Diagnostics</span>
-            <br />
-            &amp; Repairs Across London
+            Fast Mobile Mechanic in East London
           </h1>
 
           {/* Subheadline */}
           <p
-            className="reveal opacity-0 text-white/75 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 mb-10
+            className="reveal opacity-0 text-white/70 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 mb-10
                        animation-delay-200 leading-relaxed"
           >
-            Professional mobile mechanic based in East London. Diagnostics,
-            servicing, brakes, suspension and fault finding — carried out at
-            your location.
+            We come to your home, workplace or roadside for fast diagnostics and repairs, with fully equipped
+            workshop support available when needed.
           </p>
 
           {/* CTA Buttons */}
           <div
             className="reveal opacity-0 flex flex-col sm:flex-row items-center justify-center lg:justify-start
-                       gap-4 animation-delay-300 mb-10"
+                       gap-4 animation-delay-300 mb-6"
           >
             <a
               href="tel:07880037742"
-              className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center text-base px-8 py-4"
+              className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center text-lg px-10 py-4
+                         shadow-glowRed-lg"
             >
               <Phone className="w-5 h-5" />
-              Call Now — 07880 037742
+              Call Now
             </a>
             <button
               onClick={() => scrollToSection('#contact')}
-              className="flex items-center gap-2 w-full sm:w-auto justify-center text-base px-8 py-4
-                         border-2 border-white/40 text-white font-montserrat font-semibold rounded-lg
-                         transition-all duration-300 hover:border-white hover:bg-white/10 active:scale-95"
+              className="btn-secondary flex items-center gap-2 w-full sm:w-auto justify-center text-lg px-10 py-4"
             >
-              <Calendar className="w-5 h-5" />
-              Book Diagnostic
+              <Bolt className="w-5 h-5" />
+              Get Fast Help
             </button>
           </div>
 
-          {/* Trust Badges */}
+          {/* Trust Bar */}
           <div
-            className="reveal opacity-0 flex flex-col sm:flex-row flex-wrap items-center
-                       justify-center lg:justify-start gap-4 animation-delay-400"
+            className="reveal opacity-0 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5
+                       text-white/60 text-sm font-medium tracking-wide animation-delay-400"
           >
-            {trustBadges.map(({ label, highlight }) => (
+            {trustPoints.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2">
-                {highlight ? (
-                  <Star className="w-4 h-4 text-yellow-400 fill-yellow-400 flex-shrink-0" />
-                ) : (
-                  <CheckCircle2 className="w-4 h-4 text-brand-red flex-shrink-0" />
-                )}
-                <span className={`text-sm font-medium ${highlight ? 'text-yellow-400' : 'text-white/80'}`}>
-                  {label}
-                </span>
+                <Icon className="w-4 h-4 text-white/40" />
+                <span className="text-white/60">{label}</span>
               </div>
             ))}
           </div>

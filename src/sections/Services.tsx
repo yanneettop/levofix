@@ -5,32 +5,44 @@ const featured = [
   {
     title: 'Car Diagnostics',
     img: '/service-diagnostics.jpg',
-    description: 'Full OBD computer diagnostics to identify engine warning lights, fault codes and performance issues accurately.',
+    description:
+      'Warning lights, engine issues or unclear faults? We provide fast on-site diagnostics to identify the problem clearly and help you decide on the right next step.',
+    cta: 'Book Diagnostics',
   },
   {
-    title: 'Brake Repair',
+    title: 'Roadside Repairs',
     img: '/service-brakes.jpg',
-    description: 'Brake pads, discs, calipers and fluid replacement. Full brake inspection and repair carried out on-site.',
+    description:
+      'For many common issues, repairs can be carried out at your location, helping you get back on the road without the usual garage hassle.',
+    cta: 'Get Help Now',
   },
   {
-    title: 'Suspension Repair',
-    img: '/service-suspension.jpg',
-    description: 'Shock absorbers, springs, bushes and steering components diagnosed and repaired where your car is parked.',
-  },
-  {
-    title: 'Transmission Diagnostics',
-    img: '/service-transmission.jpg',
-    description: 'Gearbox, clutch and transmission fault diagnosis. Honest assessment before any repair work is carried out.',
-  },
-  {
-    title: 'Fault Finding',
+    title: 'Battery & Starting Issues',
     img: '/service-fault.jpg',
-    description: 'Systematic electrical and mechanical fault tracing for complex problems that other garages struggle to resolve.',
+    description:
+      'If your vehicle will not start or is showing signs of battery trouble, we can inspect the issue quickly and provide practical support where possible.',
+    cta: 'Fix Starting Issue',
   },
   {
-    title: 'Pre-Purchase Inspection',
-    img: '/service-inspection.jpg',
-    description: "Thinking of buying a used car? Denis will inspect it thoroughly so you know exactly what you're getting.",
+    title: 'Brake Repairs & Maintenance',
+    img: '/service-brakes.jpg',
+    description:
+      'From worn components to braking concerns, we offer reliable brake checks and repairs to help keep your vehicle safe and roadworthy.',
+    cta: 'Ask About Brakes',
+  },
+  {
+    title: 'Engine Fault Finding',
+    img: '/service-fault.jpg',
+    description:
+      'Strange noises, warning lights or performance problems can often point to deeper engine issues. We help diagnose faults properly before unnecessary repairs are made.',
+    cta: 'Check Engine Fault',
+  },
+  {
+    title: 'Workshop Repairs',
+    img: '/service-transmission.jpg',
+    description:
+      'If your vehicle needs more involved mechanical work, it can be taken to our fully equipped workshop for further inspection and repair.',
+    cta: 'Workshop Support',
   },
 ];
 
@@ -81,12 +93,10 @@ const Services = () => {
               What We Do
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
-              Professional{' '}
-              <span className="text-gradient-red">Car Services</span>
+              Diagnostics, Repairs and <span className="text-gradient-red">Workshop Support</span>
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-lg">
-              All services are carried out at your location — home, workplace
-              or roadside. No need to visit a garage.
+              From fast on-site fault finding to more involved workshop repairs, Levofix LTD offers practical vehicle support across East London.
             </p>
           </div>
         </div>
@@ -127,7 +137,7 @@ const Services = () => {
                     className="inline-flex items-center gap-2 text-brand-red text-sm font-semibold
                                hover:gap-3 transition-all duration-300"
                   >
-                    Learn More
+                    {service.cta}
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>

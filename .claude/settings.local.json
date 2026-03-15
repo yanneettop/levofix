@@ -7,7 +7,10 @@
       "mcp__desktop-commander__kill_process",
       "mcp__desktop-commander__force_terminate",
       "Bash(npx skills find everything-claude-code)",
-      "Bash(Test-Path \"C:\\\\Users\\\\chest\\\\Desktop\\\\Websites\\\\Levofix LTD\\\\Website\\\\.gitignore\")"
+      "Bash(Test-Path \"C:\\\\Users\\\\chest\\\\Desktop\\\\Websites\\\\Levofix LTD\\\\Website\\\\.gitignore\")",
+      "mcp__desktop-commander__edit_block",
+      "mcp__PDF_Tools_-_Analyze__Extract__Fill__Compare__read_pdf_content",
+      "mcp__desktop-commander__read_file"
     ]
   }
 }

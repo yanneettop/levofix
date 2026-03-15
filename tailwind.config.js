@@ -114,6 +114,10 @@ module.exports = {
           "0%, 100%": { boxShadow: "0 0 20px rgba(198, 40, 40, 0.3)" },
           "50%": { boxShadow: "0 0 40px rgba(198, 40, 40, 0.6)" },
         },
+        "ken-burns": {
+          "0%": { transform: "scale(1) translate(0, 0)" },
+          "100%": { transform: "scale(1.08) translate(-2%, -2%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -123,6 +127,7 @@ module.exports = {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.6s ease-out forwards",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "ken-burns": "ken-burns 25s ease-in-out infinite alternate",
       },
     },
   },

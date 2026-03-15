@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { CheckCircle2, Wrench, MapPin, ShieldCheck, MessageCircle } from 'lucide-react';
+import { CheckCircle2, Bolt, Wrench, MapPin, ShieldCheck } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -24,10 +24,10 @@ const About = () => {
   }, []);
 
   const bullets = [
-    { icon: Wrench,       text: 'Experienced across all makes and vans' },
-    { icon: MapPin,       text: 'Diagnostics and repairs at your location' },
-    { icon: MessageCircle,text: 'Honest advice before any repair work' },
-    { icon: ShieldCheck,  text: 'Professional service across London' },
+    { icon: Bolt,          text: 'Fast mobile response across East London' },
+    { icon: Wrench,        text: 'Honest diagnostics and practical repairs' },
+    { icon: MapPin,        text: 'Fully equipped workshop support' },
+    { icon: ShieldCheck,   text: 'Friendly, professional service' },
   ];
 
   return (
@@ -80,27 +80,16 @@ const About = () => {
                   About Us
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6 leading-tight">
-                  Meet Denis at{' '}
-                  <span className="text-gradient-red">Levofix LTD</span>
+                  Mobile Mechanic Service You Can Rely On
                 </h2>
               </div>
 
               <div className="reveal opacity-0 animation-delay-100">
-                <p className="text-gray-600 text-lg leading-relaxed mb-4">
-                  Denis Levoskin is an experienced mobile mechanic with over
-                  18 years of hands-on experience across all makes of cars and
-                  vans. Based in Poplar, East London, Denis founded Levofix LTD
-                  in 2020 to offer a more convenient and dependable alternative
-                  to the traditional garage.
-                </p>
-                <p className="text-gray-500 leading-relaxed mb-8">
-                  Instead of taking your car in and waiting, Denis comes directly
-                  to your home, workplace or roadside — carrying out accurate
-                  diagnostics and quality repairs on the spot.
+                <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                  Levofix LTD provides fast, practical mobile mechanic support across East London, helping drivers with on-site diagnostics, repairs and professional advice. Built on real roadside experience, the service is designed to make car problems easier to deal with, whether you are at home, at work or stuck on the road. For more involved jobs, vehicles can also be taken to our fully equipped workshop.
                 </p>
               </div>
 
-              {/* Bullet Points */}
               <div className="reveal opacity-0 animation-delay-200 space-y-3">
                 {bullets.map(({ icon: Icon, text }) => (
                   <div
