@@ -39,10 +39,10 @@ const Navbar = ({ scrollY }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-brand-darker/95 backdrop-blur-md shadow-lg py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5 py-3'
+            : 'bg-transparent py-6'
         }`}
       >
         <div className="w-full section-padding">
@@ -56,19 +56,19 @@ const Navbar = ({ scrollY }: NavbarProps) => {
               }}
               className="flex items-center gap-3 group"
             >
-              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-red transition-transform duration-300 group-hover:scale-110">
-                <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover scale-[1.35]" />
+              <div className="w-[4.5rem] h-[4.5rem] rounded-full overflow-hidden transition-all duration-300 group-hover:shadow-glow">
+                <img src="/Logo1.png" alt="Levofix Ltd" className="w-full h-full object-contain" />
               </div>
               <div className="hidden sm:block">
-                <span className="font-montserrat font-bold text-xl text-white block leading-tight">
-                  Levofix <span className="text-brand-red">LTD</span>
+                <span className="font-bebas text-2xl text-white block leading-none tracking-wider">
+                  LEVOFIX
                 </span>
-                <span className="text-brand-grayLight text-xs">Mobile Mechanic London</span>
+                <span className="text-white/30 text-[10px] font-outfit uppercase tracking-[0.2em]">Mobile Mechanic</span>
               </div>
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -77,25 +77,28 @@ const Navbar = ({ scrollY }: NavbarProps) => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-white/80 hover:text-brand-red transition-colors duration-300 font-medium text-sm"
+                  className="relative px-5 py-2 text-white/50 hover:text-white transition-colors duration-300 font-outfit text-sm uppercase tracking-wider group"
                 >
                   {link.name}
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-red group-hover:w-5 transition-all duration-300" />
                 </a>
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* CTA */}
+            <div className="hidden lg:flex items-center gap-5">
               <a
                 href="tel:07880037742"
-                className="flex items-center gap-2 text-white/80 hover:text-brand-red transition-colors duration-300"
+                className="flex items-center gap-2 text-white/40 hover:text-brand-redLight transition-colors duration-300 group"
               >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm font-medium">07880 037742</span>
+                <div className="w-8 h-8 rounded-full border border-brand-blueElectric/20 flex items-center justify-center group-hover:border-brand-blueElectric/50 transition-colors">
+                  <Phone className="w-3.5 h-3.5 text-brand-blueElectric/60 group-hover:text-brand-blueElectric" />
+                </div>
+                <span className="text-xs font-outfit tracking-wider">07880 037742</span>
               </a>
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="btn-primary text-sm"
+                className="btn-primary text-xs px-6 py-2.5"
               >
                 Book Now
               </button>
@@ -104,14 +107,10 @@ const Navbar = ({ scrollY }: NavbarProps) => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-white"
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-white/60 hover:text-white transition-colors"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -119,18 +118,17 @@ const Navbar = ({ scrollY }: NavbarProps) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-brand-darker/98 backdrop-blur-lg transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-xl transition-all duration-500 lg:hidden ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-8">
-          {/* Logo in mobile menu */}
-          <div className="mb-4">
-            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-brand-red">
-              <img src="/logo3.png" alt="Levofix Ltd" className="w-full h-full object-cover scale-[1.35]" />
+        <div className="flex flex-col items-center justify-center h-full gap-2">
+          <div className="mb-8">
+            <div className="w-16 h-16 rounded-full overflow-hidden">
+              <img src="/Logo1.png" alt="Levofix Ltd" className="w-full h-full object-contain" />
             </div>
           </div>
-          
+
           {navLinks.map((link, index) => (
             <a
               key={link.name}
@@ -139,27 +137,27 @@ const Navbar = ({ scrollY }: NavbarProps) => {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className={`text-2xl font-montserrat font-semibold text-white hover:text-brand-red transition-all duration-300 ${
-                isMenuOpen
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-4'
+              className={`font-bebas text-4xl tracking-[0.15em] text-white/60 hover:text-white transition-all duration-500 ${
+                isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
               {link.name}
             </a>
           ))}
-          <button
-            onClick={() => scrollToSection('#contact')}
-            className={`btn-primary mt-4 ${
-              isMenuOpen
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-4'
-            }`}
-            style={{ transitionDelay: '500ms' }}
-          >
-            Book Now
-          </button>
+
+          <div className="mt-8 flex items-center gap-4">
+            <a href="tel:07880037742" className="btn-primary text-xs">
+              <Phone className="w-3.5 h-3.5 mr-2 inline" />
+              Call Now
+            </a>
+            <button
+              onClick={() => scrollToSection('#contact')}
+              className="btn-outline text-xs"
+            >
+              Book Diagnostic
+            </button>
+          </div>
         </div>
       </div>
     </>

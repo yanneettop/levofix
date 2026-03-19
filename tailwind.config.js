@@ -48,26 +48,25 @@ module.exports = {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom brand colors - Red, Blue, Gray, White palette
         brand: {
-          red: "#C62828",        // Deep red from logo
-          redLight: "#EF4444",   // Bright red for accents
-          redDark: "#991B1B",    // Darker red
-          blue: "#2563EB",       // Lift blue
-          blueLight: "#3B82F6",  // Lighter blue
-          blueDark: "#1D4ED8",   // Darker blue
-          gray: "#6B7280",       // Garage wall gray
-          grayLight: "#9CA3AF",  // Light gray
-          grayDark: "#4B5563",   // Dark gray
-          dark: "#1F1F1F",       // Warm dark background
-          darker: "#171717",     // Darker background
-          navy: "#0d1117",       // Dark navy — accent section break
+          red: "#B71C1C",
+          redLight: "#EF5350",
+          redDark: "#7F0000",
+          amber: "#FFB300",
+          amberLight: "#FFD54F",
+          blue: "#2563EB",
+          blueLight: "#3B82F6",
+          blueElectric: "#0EA5E9",
+          dark: "#0a0a0a",
+          darker: "#050505",
+          card: "#111111",
+          cardHover: "#161616",
           white: "#FFFFFF",
         },
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        bebas: ['"Bebas Neue"', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif'],
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -78,12 +77,11 @@ module.exports = {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
-        glowRed: "0 0 30px rgba(198, 40, 40, 0.5)",
-        "glowRed-lg": "0 0 55px rgba(198, 40, 40, 0.65)",
-        glowBlue: "0 0 20px rgba(37, 99, 235, 0.3)",
-        "glowBlue-lg": "0 0 40px rgba(37, 99, 235, 0.4)",
-        card: "0 4px 20px rgba(0, 0, 0, 0.08)",
-        "card-hover": "0 8px 30px rgba(0, 0, 0, 0.12)",
+        glow: "0 0 60px rgba(183, 28, 28, 0.15)",
+        "glow-lg": "0 0 100px rgba(183, 28, 28, 0.25)",
+        "glow-amber": "0 0 40px rgba(255, 179, 0, 0.15)",
+        card: "0 4px 20px rgba(0, 0, 0, 0.3)",
+        "card-hover": "0 8px 40px rgba(0, 0, 0, 0.5)",
       },
       keyframes: {
         "accordion-down": {
@@ -99,7 +97,7 @@ module.exports = {
           "20%,50%": { opacity: "0" },
         },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "0%": { opacity: "0", transform: "translateY(30px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
@@ -107,27 +105,42 @@ module.exports = {
           "100%": { opacity: "1" },
         },
         "slide-in-right": {
-          "0%": { opacity: "0", transform: "translateX(30px)" },
+          "0%": { opacity: "0", transform: "translateX(40px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(198, 40, 40, 0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(198, 40, 40, 0.6)" },
+        "slide-in-left": {
+          "0%": { opacity: "0", transform: "translateX(-40px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "scale-in": {
+          "0%": { opacity: "0", transform: "scale(0.9)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
         },
         "ken-burns": {
           "0%": { transform: "scale(1) translate(0, 0)" },
-          "100%": { transform: "scale(1.08) translate(-2%, -2%)" },
+          "100%": { transform: "scale(1.12) translate(-1.5%, -1.5%)" },
+        },
+        "line-grow": {
+          "0%": { width: "0" },
+          "100%": { width: "60px" },
+        },
+        "counter-pulse": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "1" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
-        "fade-in": "fade-in 0.5s ease-out forwards",
-        "slide-in-right": "slide-in-right 0.6s ease-out forwards",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
-        "ken-burns": "ken-burns 25s ease-in-out infinite alternate",
+        "fade-in-up": "fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slide-in-left": "slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "scale-in": "scale-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "ken-burns": "ken-burns 30s ease-in-out infinite alternate",
+        "line-grow": "line-grow 0.8s ease-out forwards",
+        "counter-pulse": "counter-pulse 2s ease-in-out infinite",
       },
     },
   },

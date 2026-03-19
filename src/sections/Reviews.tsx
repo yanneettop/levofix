@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Star, ExternalLink, Quote } from 'lucide-react';
 
 const reviews = [
@@ -13,28 +13,28 @@ const reviews = [
     name: 'Sarah T.',
     location: 'Hackney',
     rating: 5,
-    text: 'Denis came the same evening I called. Identified the issue straight away and explained everything clearly before touching anything. Really appreciate the honesty — no unnecessary work.',
+    text: 'The Levofix team came the same evening I called. Identified the issue straight away and explained everything clearly before touching anything. Really appreciate the honesty — no unnecessary work.',
     car: 'VW Golf',
   },
   {
     name: 'Michael C.',
     location: 'Stratford',
     rating: 5,
-    text: 'Had a gearbox issue Denis sorted efficiently at my home. Careful, thorough work — he took his time and did it right. Fair pricing and no surprises on the bill.',
+    text: 'Had a gearbox issue the Levofix team sorted efficiently at my home. Careful, thorough work — they took their time and did it right. Fair pricing and no surprises on the bill.',
     car: 'Mercedes C-Class',
   },
   {
     name: 'Emma W.',
     location: 'Bow',
     rating: 5,
-    text: "Booked a pre-purchase inspection before buying a used car. Denis was punctual, went through everything in detail and gave me a clear picture of the car's condition. Saved me from a bad purchase.",
+    text: "Booked a pre-purchase inspection before buying a used car. The mechanic was punctual, went through everything in detail and gave me a clear picture of the car's condition. Saved me from a bad purchase.",
     car: 'Audi A3',
   },
   {
     name: 'David P.',
     location: 'Greenwich',
     rating: 5,
-    text: 'Clutch was slipping badly. Denis diagnosed it quickly and got the repair done at my home. Reasonable price, clean work, and he was friendly and easy to deal with from start to finish.',
+    text: 'Clutch was slipping badly. Levofix diagnosed it quickly and got the repair done at my home. Reasonable price, clean work, and the team was friendly and easy to deal with from start to finish.',
     car: 'Ford Focus',
   },
 ];
@@ -42,51 +42,51 @@ const reviews = [
 const GOOGLE_REVIEWS_URL =
   'https://www.google.com/maps/search/Levofix+LTD+75+Wallwood+Street+London+E14+7GS';
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
 const Reviews = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-    );
-    const elements = sectionRef.current?.querySelectorAll('.reveal');
-    elements?.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section
       id="reviews"
-      ref={sectionRef}
-      className="relative py-20 lg:py-32 bg-gray-50 overflow-hidden"
+      className="relative py-24 lg:py-36 bg-[#f7f7f5] overflow-hidden"
     >
       <div className="relative z-10 w-full section-padding">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
-          <div className="text-center mb-12">
-            <div className="reveal opacity-0">
-              <span className="text-brand-red text-sm font-semibold uppercase tracking-widest">
-                Customer Reviews
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
-                What Customers{' '}
-                <span className="text-gradient-red">Say About Denis</span>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16"
+          >
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="rule-accent" />
+                <span className="text-brand-red text-xs font-outfit font-semibold tracking-[0.3em] uppercase">
+                  Customer Reviews
+                </span>
+              </div>
+              <h2 className="font-bebas text-5xl sm:text-6xl lg:text-7xl text-black/85 leading-[0.95] tracking-wide">
+                WHAT CUSTOMERS<br />
+                <span className="text-brand-red">SAY ABOUT LEVOFIX</span>
               </h2>
+            </div>
 
-              {/* Google Rating Banner */}
-              <div className="inline-flex flex-wrap items-center justify-center gap-3 mt-4 px-6 py-3
-                              bg-white border border-gray-200 rounded-2xl shadow-sm">
-                {/* Google G */}
-                <span className="font-bold text-lg tracking-tight">
+            {/* Google badge */}
+            <div className="flex items-center gap-4 border border-black/[0.06] bg-white px-6 py-4 self-start lg:self-end shadow-sm">
+              <div>
+                <span className="font-outfit font-bold text-lg tracking-tight">
                   <span className="text-[#4285F4]">G</span>
                   <span className="text-[#EA4335]">o</span>
                   <span className="text-[#FBBC05]">o</span>
@@ -94,85 +94,90 @@ const Reviews = () => {
                   <span className="text-[#34A853]">l</span>
                   <span className="text-[#EA4335]">e</span>
                 </span>
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
+              </div>
+              <div className="w-px h-8 bg-black/10" />
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <span className="font-bebas text-2xl text-black/80 leading-none">4.9</span>
                 </div>
-                <span className="text-gray-900 font-bold text-lg">4.9</span>
-                <span className="text-gray-500 text-sm">from 61 reviews</span>
-                <a
-                  href={GOOGLE_REVIEWS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-brand-red text-sm font-semibold
-                             hover:text-brand-redLight transition-colors duration-200"
-                >
-                  View on Google
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <span className="text-black/35 text-[10px] font-outfit tracking-wider">from 61 reviews</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Review Cards Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-            {reviews.map((review, index) => (
-              <div
+          {/* Review Cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-30px' }}
+            transition={{ staggerChildren: 0.08, delayChildren: 0.1 }}
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-black/[0.06] mb-10"
+          >
+            {reviews.map((review) => (
+              <motion.div
                 key={review.name}
-                className="reveal opacity-0 group flex flex-col p-6 rounded-2xl
-                           bg-white border border-gray-200 shadow-sm
-                           hover:border-brand-red/40 hover:shadow-md transition-all duration-300"
-                style={{ animationDelay: `${(index % 3) * 100}ms` }}
+                variants={cardVariants}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -4 }}
+                className="group flex flex-col bg-white p-7 hover:bg-[#fcfcfa] transition-colors duration-500 relative"
               >
-                {/* Quote icon */}
-                <Quote className="w-6 h-6 text-brand-red/30 mb-4 flex-shrink-0" />
+                {/* Quote */}
+                <Quote className="w-8 h-8 text-brand-red/10 mb-5 flex-shrink-0" />
 
                 {/* Stars */}
-                <div className="flex gap-1 mb-3">
+                <div className="flex gap-0.5 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
 
-                {/* Review text */}
-                <p className="text-gray-600 text-sm leading-relaxed flex-1 mb-5">
+                {/* Text */}
+                <p className="text-black/45 text-sm leading-relaxed font-outfit font-light flex-1 mb-6">
                   "{review.text}"
                 </p>
 
                 {/* Author */}
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-gray-900 font-semibold text-sm">{review.name}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">
+                <div className="border-t border-black/5 pt-5">
+                  <p className="text-black/70 font-outfit font-semibold text-sm">{review.name}</p>
+                  <p className="text-black/30 text-xs font-outfit mt-1">
                     {review.location} · {review.car}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             {/* View All Card */}
-            <div className="reveal opacity-0 flex flex-col items-center justify-center p-6 rounded-2xl
-                            bg-white border-2 border-brand-red/20 hover:border-brand-red/50
-                            transition-all duration-300 text-center min-h-[200px] shadow-sm"
-                 style={{ animationDelay: '500ms' }}>
-              <div className="flex gap-1 mb-3">
+            <motion.div
+              variants={cardVariants}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4 }}
+              className="flex flex-col items-center justify-center bg-white p-7 text-center group hover:bg-[#fcfcfa] transition-colors duration-500"
+            >
+              <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-gray-900 font-bold text-2xl mb-1">4.9 / 5</p>
-              <p className="text-gray-500 text-sm mb-5">Based on 61 Google reviews</p>
-              <a
+              <span className="font-bebas text-6xl text-black/80 leading-none mb-1">4.9</span>
+              <span className="text-black/35 text-xs font-outfit tracking-wider mb-6">Based on 61 Google reviews</span>
+              <motion.a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 btn-primary text-sm px-5 py-3"
+                className="btn-primary inline-flex items-center gap-2 text-xs px-6 py-3"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
                 View All Reviews
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </motion.a>
+            </motion.div>
+          </motion.div>
 
         </div>
       </div>
