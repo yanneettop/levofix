@@ -56,7 +56,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full section-padding pb-36 pt-36 sm:pb-24 sm:pt-40 lg:pt-48">
+      <div className="relative z-10 w-full section-padding pb-24 pt-36 sm:pb-24 sm:pt-40 lg:pt-48">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
 
