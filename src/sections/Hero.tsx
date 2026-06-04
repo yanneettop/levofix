@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-end overflow-hidden"
+      className="relative min-h-[100svh] flex items-end overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -47,7 +47,8 @@ const Hero = () => {
           />
         </div>
         {/* Cinematic overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/75 to-transparent" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/25 sm:bg-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-transparent" />
         {/* Red ambient glow */}
@@ -55,7 +56,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full section-padding pb-24 pt-40 lg:pt-48">
+      <div className="relative z-10 w-full section-padding pb-36 pt-36 sm:pb-24 sm:pt-40 lg:pt-48">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl">
 
@@ -73,13 +74,13 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            {/* Headline — massive Bebas Neue */}
+            {/* Headline */}
             <motion.h1
               variants={fadeUp}
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] text-white leading-[0.9] mb-8 tracking-wide"
+              className="font-bebas text-5xl min-[360px]:text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] text-white leading-[0.9] mb-8 tracking-wide drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
             >
               FAST MOBILE<br />
               <span className="text-gradient-red">MECHANIC</span><br />

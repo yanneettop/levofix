@@ -34,8 +34,32 @@ const CTA = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const buildWhatsAppMessage = () => {
+    const preferredTimeLabel =
+      {
+        morning: 'Morning (8:30am - 12pm)',
+        afternoon: 'Afternoon (12pm - 4pm)',
+        evening: 'Late afternoon (4pm - 6pm)',
+        asap: 'As soon as possible',
+      }[formData.preferredTime] || 'Not specified';
+
+    return [
+      'Hi, I would like to book a diagnostic with Levofix LTD.',
+      '',
+      `Name: ${formData.name}`,
+      `Phone: ${formData.phone}`,
+      `Vehicle: ${formData.vehicle}`,
+      `Location: ${formData.location}`,
+      `Preferred time: ${preferredTimeLabel}`,
+      '',
+      `Issue: ${formData.issue}`,
+    ].join('\n');
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const whatsappUrl = `https://wa.me/447880037742?text=${encodeURIComponent(buildWhatsAppMessage())}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setSubmitted(true);
   };
 
@@ -130,7 +154,7 @@ const CTA = () => {
           >
             {[
               { icon: Phone, label: 'Phone', value: '07880 037742', href: 'tel:07880037742' },
-              { icon: Clock, label: 'Hours', value: 'Mon–Fri: 8:30am – 6:00pm' },
+              { icon: Clock, label: 'Hours', value: 'Mon-Fri: 8:30am - 6:00pm' },
               { icon: MapPin, label: 'Based In', value: 'Poplar, East London' },
             ].map(({ icon: Icon, label, value, href }) => (
               <motion.div
@@ -189,6 +213,7 @@ const CTA = () => {
                 </div>
                 <motion.button
                   onClick={closeForm}
+                  aria-label="Close booking form"
                   className="w-8 h-8 border border-white/10 flex items-center justify-center
                              hover:border-brand-red/30 transition-colors text-white/40 hover:text-white"
                   whileHover={{ rotate: 90 }}
@@ -213,7 +238,7 @@ const CTA = () => {
                     </div>
                     <h4 className="font-bebas text-3xl text-white tracking-wider mb-2">REQUEST SENT!</h4>
                     <p className="text-white/40 text-sm font-outfit mb-6">
-                      Our team will call you back shortly to confirm your booking.
+                      Your details have been prepared in WhatsApp. Send the message there and our team will call you back to confirm.
                     </p>
                     <button onClick={closeForm} className="btn-primary w-full justify-center">
                       Close
@@ -287,9 +312,9 @@ const CTA = () => {
                           className={`${inputClass} appearance-none`}
                         >
                           <option value="" className="bg-[#0a0a0a]">Select a time...</option>
-                          <option value="morning" className="bg-[#0a0a0a]">Morning (8:30am – 12pm)</option>
-                          <option value="afternoon" className="bg-[#0a0a0a]">Afternoon (12pm – 4pm)</option>
-                          <option value="evening" className="bg-[#0a0a0a]">Late afternoon (4pm – 6pm)</option>
+                          <option value="morning" className="bg-[#0a0a0a]">Morning (8:30am - 12pm)</option>
+                          <option value="afternoon" className="bg-[#0a0a0a]">Afternoon (12pm - 4pm)</option>
+                          <option value="evening" className="bg-[#0a0a0a]">Late afternoon (4pm - 6pm)</option>
                           <option value="asap" className="bg-[#0a0a0a]">As soon as possible</option>
                         </select>
                       </div>
@@ -305,7 +330,7 @@ const CTA = () => {
                     </motion.button>
 
                     <p className="text-white/20 text-[10px] text-center font-outfit tracking-wider">
-                      Mon–Fri 8:30am–6pm · We will call to confirm
+                      Mon-Fri 8:30am-6pm · We will call to confirm
                     </p>
                   </motion.form>
                 )}
@@ -316,7 +341,7 @@ const CTA = () => {
       </AnimatePresence>
 
       {/* Floating WhatsApp + Call buttons (mobile) */}
-      <div className="fixed bottom-6 left-0 right-0 z-40 flex justify-center gap-3 px-4 lg:hidden">
+      <div className="fixed bottom-6 left-0 right-0 z-30 flex justify-center gap-3 px-4 lg:hidden">
         <a
           href="tel:07880037742"
           className="flex-1 max-w-[170px] flex items-center justify-center gap-2 bg-gradient-to-r from-[#B71C1C] to-[#D32F2F]
