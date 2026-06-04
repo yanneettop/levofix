@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] flex items-end overflow-hidden"
+      className="relative min-h-[100svh] flex items-end lg:items-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -56,8 +56,8 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full section-padding pb-24 pt-36 sm:pb-24 sm:pt-40 lg:pt-48">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 w-full section-padding pb-24 pt-36 sm:pb-24 sm:pt-40 lg:pb-16 lg:pt-28 xl:pt-24">
+        <div className="relative w-full">
           <div className="max-w-3xl">
 
             {/* Eyebrow */}
