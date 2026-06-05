@@ -341,7 +341,7 @@ const CTA = () => {
       </AnimatePresence>
 
       {/* Floating WhatsApp button (mobile) */}
-      <div className="fixed bottom-5 right-5 z-30 lg:hidden">
+      <div className="whatsapp-float fixed bottom-5 right-5 z-30 lg:hidden">
         <a
           href={WHATSAPP_URL}
           target="_blank"

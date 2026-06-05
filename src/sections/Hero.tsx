@@ -32,33 +32,33 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] flex items-end lg:items-center overflow-hidden"
+      className="hero relative min-h-[100svh] flex items-end lg:items-center overflow-hidden"
     >
       {/* Background */}
       <div className="absolute inset-0">
         <div
-          className="absolute inset-0 overflow-hidden will-change-transform"
+          className="hero-bg absolute inset-0 overflow-hidden will-change-transform"
           style={{ transform: `translateY(${parallax}px)` }}
         >
           <img
             src="/hero-new.jpg"
             alt="Levofix LTD — mobile mechanic team working on a car in London"
-            className="w-full h-[120%] object-cover object-center animate-ken-burns"
+            className="hero-bg-image w-full h-[120%] object-cover object-center animate-ken-burns"
           />
         </div>
         {/* Cinematic overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/75 to-transparent" />
-        <div className="absolute inset-0 bg-[#0a0a0a]/25 sm:bg-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
+        <div className="hero-overlay hero-overlay-side absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/75 to-transparent" />
+        <div className="hero-overlay hero-overlay-mobile absolute inset-0 bg-[#0a0a0a]/25 sm:bg-transparent" />
+        <div className="hero-overlay hero-overlay-bottom absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-transparent" />
         {/* Red ambient glow */}
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-red/8 rounded-full blur-[150px]" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full section-padding pb-24 pt-36 sm:pb-24 sm:pt-40 lg:pb-16 lg:pt-28 xl:pt-24">
+      <div className="hero-shell relative z-10 w-full section-padding pb-24 pt-36 sm:pb-24 sm:pt-40 lg:pb-16 lg:pt-28 xl:pt-24">
         <div className="relative w-full">
-          <div className="max-w-3xl">
+          <div className="hero-content max-w-3xl">
 
             {/* Eyebrow */}
             <motion.div
@@ -66,7 +66,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-4 mb-8"
+              className="hero-eyebrow flex items-center gap-4 mb-8"
             >
               <div className="rule-accent" />
               <span className="text-brand-redLight text-xs font-outfit font-semibold tracking-[0.3em] uppercase">
@@ -80,7 +80,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="font-bebas text-5xl min-[360px]:text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] text-white leading-[0.9] mb-8 tracking-wide drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
+              className="hero-title font-bebas text-5xl min-[360px]:text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] text-white leading-[0.9] mb-8 tracking-wide drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
             >
               FAST MOBILE<br />
               <span className="text-gradient-red">MECHANIC</span><br />
@@ -93,7 +93,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="text-white/45 text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-outfit font-light"
+              className="hero-copy text-white/45 text-base sm:text-lg max-w-xl mb-10 leading-relaxed font-outfit font-light"
             >
               We come to your home, workplace or roadside for fast diagnostics
               and repairs, with fully equipped workshop support when needed.
@@ -105,7 +105,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               transition={{ duration: 0.7, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col sm:flex-row items-start gap-4 mb-12"
+              className="hero-actions flex flex-col sm:flex-row items-start gap-4 mb-12"
             >
               <motion.a
                 href="tel:07880037742"
