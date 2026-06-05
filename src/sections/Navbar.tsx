@@ -118,11 +118,11 @@ const Navbar = ({ scrollY }: NavbarProps) => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-xl transition-all duration-500 lg:hidden ${
+        className={`mobile-menu-overlay fixed inset-0 z-40 bg-[#0a0a0a]/98 backdrop-blur-xl transition-all duration-500 lg:hidden ${
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
       >
-        <div className="flex flex-col items-center justify-center h-full gap-2">
+        <div className="mobile-menu-panel flex flex-col items-center justify-center h-full gap-2">
           <div className="mb-8">
             <div className="w-16 h-16 rounded-full overflow-hidden">
               <img src="/Logo1.png" alt="Levofix Ltd" className="w-full h-full object-contain" />
@@ -137,7 +137,7 @@ const Navbar = ({ scrollY }: NavbarProps) => {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className={`font-bebas text-4xl tracking-[0.15em] text-white/60 hover:text-white transition-all duration-500 ${
+              className={`mobile-menu-link font-bebas text-4xl tracking-[0.15em] text-white/60 hover:text-white transition-all duration-500 ${
                 isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
               style={{ transitionDelay: `${index * 80}ms` }}
@@ -146,14 +146,14 @@ const Navbar = ({ scrollY }: NavbarProps) => {
             </a>
           ))}
 
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mobile-menu-actions mt-8 flex items-center gap-4">
             <a href="tel:07880037742" className="btn-primary text-xs">
               <Phone className="w-3.5 h-3.5 mr-2 inline" />
               Call Now
             </a>
             <button
               onClick={() => scrollToSection('#contact')}
-              className="btn-outline text-xs"
+              className="mobile-menu-secondary btn-outline text-xs"
             >
               Book Diagnostic
             </button>

@@ -237,6 +237,56 @@
   .site-navbar button[aria-label='Toggle menu'] {
     color: rgba(255, 255, 255, 0.82);
   }
+
+  .mobile-menu-overlay {
+    z-index: 999;
+    background:
+      radial-gradient(circle at 50% 32%, rgba(183, 28, 28, 0.22), transparent 28rem),
+      linear-gradient(180deg, rgba(5, 5, 5, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%);
+    backdrop-filter: none;
+  }
+
+  .mobile-menu-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 28%),
+      radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.05), transparent 18rem);
+  }
+
+  .mobile-menu-panel {
+    position: relative;
+    z-index: 1;
+    padding: calc(96px + env(safe-area-inset-top)) 28px calc(42px + env(safe-area-inset-bottom));
+  }
+
+  .mobile-menu-link {
+    color: rgba(255, 255, 255, 0.86);
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.85);
+  }
+
+  .mobile-menu-link:hover {
+    color: #fff;
+  }
+
+  .mobile-menu-actions {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .mobile-menu-actions a,
+  .mobile-menu-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .mobile-menu-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.24);
+    color: rgba(255, 255, 255, 0.88);
+  }
 }
 
 @media (max-width: 768px) {
