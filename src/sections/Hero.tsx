@@ -41,8 +41,8 @@ const Hero = () => {
           style={{ transform: `translateY(${parallax}px)` }}
         >
           <img
-            src="/hero-new.jpg"
-            alt="Levofix LTD — mobile mechanic team working on a car in London"
+            src="/hero-garage.jpg"
+            alt="Levofix LTD garage with cars on lifts and diagnostics bay in East London"
             className="hero-bg-image w-full h-[120%] object-cover object-center animate-ken-burns"
           />
         </div>
