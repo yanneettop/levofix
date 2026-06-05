@@ -155,7 +155,7 @@ const CTA = () => {
             {[
               { icon: Phone, label: 'Phone', value: '07880 037742', href: 'tel:07880037742' },
               { icon: Clock, label: 'Hours', value: 'Mon-Fri: 8:30am - 6:00pm' },
-              { icon: MapPin, label: 'Based In', value: 'Poplar, East London' },
+              { icon: MapPin, label: 'Based In', value: 'Unit 13, Green Shield Industrial Estate' },
             ].map(({ icon: Icon, label, value, href }) => (
               <motion.div
                 key={label}

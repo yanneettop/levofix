@@ -10,7 +10,7 @@ const areas = [
 ];
 
 const GOOGLE_MAPS_URL =
-  'https://www.google.com/maps/search/Levofix+LTD+75+Wallwood+Street+London+E14+7GS';
+  'https://www.google.com/maps/search/Levofix+Ltd+Mobile+Mechanic+Poplar+Unit+13+Green+Shield+Industrial+Estate+Bradfield+Rd+London+E16+2AU';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -53,7 +53,7 @@ const ServiceArea = () => {
                   & GREATER LONDON
                 </h2>
                 <p className="text-white/35 text-base leading-relaxed mb-10 font-outfit font-light max-w-lg">
-                  Levofix LTD is based in Poplar, East London (E14) and covers a wide area
+                  Levofix LTD is based in Poplar, East London (E16 2AU) and covers a wide area
                   across Greater London. Our team travels to your location — whether that's a
                   residential street, workplace car park or roadside.
                 </p>
@@ -68,7 +68,7 @@ const ServiceArea = () => {
                 className="space-y-3 mb-10"
               >
                 {[
-                  { icon: MapPin, title: 'Based In', desc: 'Poplar, East London — E14 7GS' },
+                  { icon: MapPin, title: 'Based In', desc: 'Unit 13, Green Shield Industrial Estate, E16 2AU' },
                   { icon: Navigation, title: 'Coverage', desc: 'East London, Greater London & surrounding areas', blue: true },
                   { icon: Phone, title: 'Not sure if we cover your area?', desc: 'call', href: 'tel:07880037742', linkText: 'Call Us — 07880 037742' },
                 ].map(({ icon: Icon, title, desc, href, linkText, blue }: any) => (

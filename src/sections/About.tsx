@@ -75,7 +75,7 @@ const About = () => {
                 >
                   <div className="flex items-center gap-1.5">
                     <span className="text-amber-500 text-sm">★</span>
-                    <span className="font-bebas text-2xl text-black/80 leading-none">4.9</span>
+                    <span className="font-bebas text-2xl text-black/80 leading-none">5.0</span>
                   </div>
                   <span className="text-brand-blueElectric/50 text-[9px] tracking-[0.15em] uppercase font-outfit">Google Rating</span>
                 </motion.div>

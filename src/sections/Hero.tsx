@@ -158,7 +158,7 @@ const Hero = () => {
                     <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <span className="text-xs font-outfit tracking-wider">4.9 / 5</span>
+                <span className="text-xs font-outfit tracking-wider">5.0 / 5</span>
               </div>
             </motion.div>
           </div>
@@ -168,16 +168,16 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="hidden xl:flex absolute right-20 bottom-24 flex-col items-end gap-8"
+            className="hero-side-stats hidden xl:flex absolute right-20 bottom-24 flex-col items-end gap-8"
           >
             {[
               { value: '18+', label: 'YEARS', accent: false },
-              { value: '4.9', label: 'RATING', accent: true },
-              { value: '61', label: 'REVIEWS', accent: false },
+              { value: '5.0', label: 'RATING', accent: true },
+              { value: '131', label: 'REVIEWS', accent: false },
             ].map(({ value, label, accent }) => (
               <div key={label} className="text-right">
-                <span className={`font-bebas text-5xl block leading-none ${accent ? 'text-brand-blueElectric/15' : 'text-white/10'}`}>{value}</span>
-                <span className={`text-[10px] tracking-[0.3em] font-outfit ${accent ? 'text-brand-blueElectric/25' : 'text-white/20'}`}>{label}</span>
+                <span className={`hero-stat-value font-bebas text-5xl block leading-none ${accent ? 'text-brand-blueElectric/15' : 'text-white/10'}`}>{value}</span>
+                <span className={`hero-stat-label text-[10px] tracking-[0.3em] font-outfit ${accent ? 'text-brand-blueElectric/25' : 'text-white/20'}`}>{label}</span>
               </div>
             ))}
           </motion.div>
@@ -189,7 +189,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="hero-scroll absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <button
           onClick={() => scrollToSection('#about')}

@@ -40,7 +40,7 @@ const reviews = [
 ];
 
 const GOOGLE_REVIEWS_URL =
-  'https://www.google.com/maps/search/Levofix+LTD+75+Wallwood+Street+London+E14+7GS';
+  'https://www.google.com/maps/search/Levofix+Ltd+Mobile+Mechanic+Poplar+Unit+13+Green+Shield+Industrial+Estate+Bradfield+Rd+London+E16+2AU';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -103,9 +103,9 @@ const Reviews = () => {
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="font-bebas text-2xl text-black/80 leading-none">4.9</span>
+                  <span className="font-bebas text-2xl text-black/80 leading-none">5.0</span>
                 </div>
-                <span className="text-black/35 text-[10px] font-outfit tracking-wider">from 61 reviews</span>
+                <span className="text-black/35 text-[10px] font-outfit tracking-wider">from 131 reviews</span>
               </div>
             </div>
           </motion.div>
@@ -163,8 +163,8 @@ const Reviews = () => {
                   <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="font-bebas text-6xl text-black/80 leading-none mb-1">4.9</span>
-              <span className="text-black/35 text-xs font-outfit tracking-wider mb-6">Based on 61 Google reviews</span>
+              <span className="font-bebas text-6xl text-black/80 leading-none mb-1">5.0</span>
+              <span className="text-black/35 text-xs font-outfit tracking-wider mb-6">Based on 131 Google reviews</span>
               <motion.a
                 href={GOOGLE_REVIEWS_URL}
                 target="_blank"

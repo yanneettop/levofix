@@ -39,14 +39,14 @@ const Navbar = ({ scrollY }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`site-navbar fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5 py-3'
             : 'bg-transparent py-6'
         }`}
       >
-        <div className="w-full section-padding">
-          <div className="flex items-center justify-between">
+        <div className="navbar-inner w-full section-padding">
+          <div className="navbar-row flex items-center justify-between">
             {/* Logo */}
             <a
               href="#home"
@@ -54,16 +54,16 @@ const Navbar = ({ scrollY }: NavbarProps) => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="flex items-center gap-3 group"
+              className="navbar-brand flex items-center gap-3 group"
             >
               <div className="w-[4.5rem] h-[4.5rem] rounded-full overflow-hidden transition-all duration-300 group-hover:shadow-glow">
                 <img src="/Logo1.png" alt="Levofix Ltd" className="w-full h-full object-contain" />
               </div>
               <div className="hidden sm:block">
-                <span className="font-bebas text-2xl text-white block leading-none tracking-wider">
+                <span className="navbar-brand-title font-bebas text-2xl text-white block leading-none tracking-wider">
                   LEVOFIX
                 </span>
-                <span className="text-white/30 text-[10px] font-outfit uppercase tracking-[0.2em]">Mobile Mechanic</span>
+                <span className="navbar-brand-subtitle text-white/30 text-[10px] font-outfit uppercase tracking-[0.2em]">Mobile Mechanic</span>
               </div>
             </a>
 
@@ -77,7 +77,7 @@ const Navbar = ({ scrollY }: NavbarProps) => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="relative px-5 py-2 text-white/50 hover:text-white transition-colors duration-300 font-outfit text-sm uppercase tracking-wider group"
+                  className="navbar-link relative px-5 py-2 text-white/50 hover:text-white transition-colors duration-300 font-outfit text-sm uppercase tracking-wider group"
                 >
                   {link.name}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-brand-red group-hover:w-5 transition-all duration-300" />
@@ -89,7 +89,7 @@ const Navbar = ({ scrollY }: NavbarProps) => {
             <div className="hidden lg:flex items-center gap-5">
               <a
                 href="tel:07880037742"
-                className="flex items-center gap-2 text-white/40 hover:text-brand-redLight transition-colors duration-300 group"
+                className="navbar-phone flex items-center gap-2 text-white/40 hover:text-brand-redLight transition-colors duration-300 group"
               >
                 <div className="w-8 h-8 rounded-full border border-brand-blueElectric/20 flex items-center justify-center group-hover:border-brand-blueElectric/50 transition-colors">
                   <Phone className="w-3.5 h-3.5 text-brand-blueElectric/60 group-hover:text-brand-blueElectric" />

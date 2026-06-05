@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
 
 const WHATSAPP_URL = 'https://wa.me/447880037742?text=Hi%2C%20I%20need%20help%20with%20my%20car.';
-const GOOGLE_MAPS_URL = 'https://www.google.com/maps/search/Levofix+LTD+75+Wallwood+Street+London+E14+7GS';
+const GOOGLE_MAPS_URL = 'https://www.google.com/maps/search/Levofix+Ltd+Mobile+Mechanic+Poplar+Unit+13+Green+Shield+Industrial+Estate+Bradfield+Rd+London+E16+2AU';
 
 const quickLinks = [
   { name: 'Home', href: '#home' },
@@ -148,7 +148,7 @@ const Footer = () => {
                 {[
                   { icon: Phone, label: 'Phone', value: '07880 037742', href: 'tel:07880037742' },
                   { icon: Mail, label: 'Email', value: 'info@levofix.co.uk', href: 'mailto:info@levofix.co.uk' },
-                  { icon: MapPin, label: 'Address', value: '75 Wallwood Street\nLondon, E14 7GS', href: GOOGLE_MAPS_URL, external: true },
+                  { icon: MapPin, label: 'Address', value: 'Unit 13, Green Shield Industrial Estate\nBradfield Rd, London E16 2AU', href: GOOGLE_MAPS_URL, external: true },
                   { icon: Clock, label: 'Hours', value: 'Monâ€“Fri: 8:30am â€“ 6:00pm' },
                 ].map(({ icon: Icon, label, value, href, external }) => (
                   <li key={label} className="flex items-start gap-3">
@@ -188,7 +188,7 @@ const Footer = () => {
               All rights reserved.
             </p>
             <p className="text-white/15 text-xs font-outfit">
-              Mobile Mechanic London Â· Poplar Â· East London Â· E14
+              Mobile Mechanic London · Poplar · East London · E16
             </p>
           </div>
         </div>

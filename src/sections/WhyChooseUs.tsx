@@ -34,9 +34,9 @@ const reasons = [
 
 const stats = [
   { value: '18+', label: 'Years Experience', blue: false },
-  { value: '4.9★', label: 'Google Rating', blue: true },
-  { value: '61', label: 'Verified Reviews', blue: true },
-  { value: 'E14', label: 'Based in Poplar', blue: false },
+  { value: '5.0/5', label: 'Google Rating', blue: true },
+  { value: '131', label: 'Verified Reviews', blue: true },
+  { value: 'E16', label: 'Based in Poplar', blue: false },
 ];
 
 const fadeUp = {
